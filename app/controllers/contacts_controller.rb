@@ -33,10 +33,10 @@ class ContactsController < ApplicationController
 
       ContactMailer.contact_email(name, email, body).deliver
 
-      flash[:success] = 'Contact was successfully created.'
+      flash[:success] = 'Message sent successfully.'
       redirect_to root_path
     else
-      flash[:danger] = 'Error occured. Contact could not saved'
+      flash[:danger] = 'Error occured. Mail could not saved'
       render 'new'
     end
   end
